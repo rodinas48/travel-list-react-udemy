@@ -1,13 +1,168 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+h1.logo {
+  font-family: "Londrina Sketch", sans-serif;
+  background-color: rgb(214 169 146);
+  color: rgb(106, 44, 20);
+  padding: 20px;
+  font-size: 70px;
+
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.add-form {
+  padding: 30px;
+  background-color: rgb(241 228 220);
+  color: rgb(112, 89, 77);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.add-form select,
+.add-form input,
+.add-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+option {
+  background-color: rgb(214 169 146);
+}
+
+.add-form button {
+  cursor: pointer;
+  background-color: rgb(214 169 146);
+  color: rgb(79, 59, 48);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-form button:active ,.filter select:active,
+.filter button:active{
+  background-color: rgb(126, 85, 76);
+  color: white;
+}
+
+.list {
+  padding: 40px 0;
+  background-color: rgba(236, 218, 195, 0.315);
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list ul {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-content: start;
+
+}
+
+.list ul li {
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.quantity {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #7e0c0c;
+  color: rgb(246, 246, 246);
+  margin-right: 10px;
+}
+
+.item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  accent-color: #7e0c0c;
+}
+
+.item input[type="checkbox"]:checked~p.itemText {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.item input[type="checkbox"]:checked~p .quantity {
+  background-color: gray;
+}
+
+.item button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.filter select,
+.filter button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: rgb(214 169 146);
+  color: #6c0a0a;
+}
+
+footer {
+  background-color: rgb(106, 44, 20);
+  color: rgb(233, 232, 232);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
